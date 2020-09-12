@@ -151,10 +151,9 @@ class CenterStar:
             msa_result.extend(new[1:])
 
         return msa_result
-
-input_file = "input.txt"
-f = open(input_file, 'r')
-lines = [line.strip() for line in f.readlines() if line.strip()]
+lines = []
+for i in range(4):
+    lines.append(input())
 scores = [MatchScore, MisMatchScore, GapScore]
 msa = CenterStar(scores, lines).multiple_sequence_alignment()
 for item in msa:
